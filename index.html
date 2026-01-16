@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>AI แนะแนวคณะเรียนต่อ</title>
+    <style>
+        body {
+            font-family: Tahoma;
+            background: #f5f5f5;
+            padding: 30px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #reply {
+            margin-top: 15px;
+            background: #eef;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <h2>🤖 AI แนะแนวคณะเรียนต่อ</h2>
+    <p>พิมพ์สิ่งที่ชอบ เช่น "ชอบคณิต" "ชอบภาษา"</p>
+
+    <input id="msg" placeholder="พิมพ์ตรงนี้">
+    <button onclick="answer()">ถาม AI</button>
+
+    <div id="reply"></div>
+</div>
+
+<script>
+function answer() {
+    let text = document.getElementById("msg").value;
+    let reply = "";
+
+    if (text.includes("คณิต")) {
+        reply = "เหมาะกับสายวิทย์-คณิต เช่น วิศวกรรม, วิทยาการข้อมูล, คณิตศาสตร์ประยุกต์";
+    } 
+    else if (text.includes("ภาษา")) {
+        reply = "เหมาะกับอักษรศาสตร์, ศิลปศาสตร์, การท่องเที่ยว, การบิน";
+    }
+    else if (text.includes("ศิลปะ")) {
+        reply = "เหมาะกับนิเทศศิลป์, ออกแบบ, สถาปัตย์";
+    }
+    else {
+        reply = "ลองบอกสิ่งที่ชอบ เช่น คณิต ภาษา ศิลปะ";
+    }
+
+    document.getElementById("reply").innerText = reply;
+}
+</script>
+
+</body>
+</html>
